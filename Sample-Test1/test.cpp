@@ -5,15 +5,19 @@
 
 using namespace std;
 
-TEST(PrimeFactorTests, Of1) {
+class PrimeFixture : public testing::Test {
+public:
 	PrimeFactor prime_factor;
-	vector<int> expects = {};
-	EXPECT_EQ(expects, prime_factor.of(1));
+	vector<int> expected;
+};
+
+TEST_F(PrimeFixture, Of1) {
+	expected = {};
+	EXPECT_EQ(expected, prime_factor.of(1));
 }
 
-TEST(PrimeFactorTests, Of2) {
-	PrimeFactor prime_factor;
-	vector<int> expects = {2};
-	EXPECT_EQ(expects, prime_factor.of(2));
+TEST_F(PrimeFixture, Of2) {
+	expected = {2};
+	EXPECT_EQ(expected, prime_factor.of(2));
 }
 
