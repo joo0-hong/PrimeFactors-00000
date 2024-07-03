@@ -10,18 +10,19 @@ public:
 			int divisor = 2;
 			if (num == 4) {
 				while (num % divisor == 0) {
-					result.push_back(2);
+					result.push_back(divisor);
 					num /= divisor;
 				}
 			}
 			else if (num == 6) {
 				while (num % divisor == 0) {
-					result.push_back(2);
+					result.push_back(divisor);
 					num /= divisor;
 				}
-				while (num % 3 == 0) {
-					result.push_back(3);
-					num /= 3;
+				divisor++;
+				while (num % divisor == 0) {
+					result.push_back(divisor);
+					num /= divisor;
 				}
 			}
 			else {
